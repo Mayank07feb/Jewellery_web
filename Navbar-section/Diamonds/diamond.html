@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond Section</title>
+    <link rel="stylesheet" href="diamond.css">
+</head>
+
+<body>
+
+    <div class="full-width-image-diamond">
+        <img src="./asset/diamond.jpg" alt="Full Width Image">
+    </div>
+
+    <div class="diamond_section_main">
+        <h1>Diamonds</h1>
+        <div class="diamonds-container">
+            <!-- Repeat this block for each diamond box -->
+            <div class="diamond-box">
+                <img class="diamond-img" src="./asset/arteum-ro-VJZdxfvFGuo-unsplash.jpg" alt="Diamond 1">
+                <div class="diamond-info">
+                    <div class="diamond-title">Classic Diamond Ring</div>
+                    <div class="diamond-price">$999.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="diamond-box">
+                <img class="diamond-img" src="./asset/engin-akyurt-FsuqRsukQRA-unsplash.jpg" alt="Diamond 2">
+                <div class="diamond-info">
+                    <div class="diamond-title">Elegant Diamond Necklace</div>
+                    <div class="diamond-price">$1499.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="diamond-box">
+                <img class="diamond-img" src="./asset/engin-akyurt-RFIpITqnaZw-unsplash.jpg" alt="Diamond 1">
+                <div class="diamond-info">
+                    <div class="diamond-title">Classic Diamond Ring</div>
+                    <div class="diamond-price">$999.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="diamond-box">
+                <img class="diamond-img" src="./asset/sabrianna-lbqW0O09RAM-unsplash.jpg" alt="Diamond 2">
+                <div class="diamond-info">
+                    <div class="diamond-title">Elegant Diamond Necklace</div>
+                    <div class="diamond-price">$1499.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="diamond-box">
+                <img class="diamond-img" src="./asset/girl-with-red-hat-IKJ8k8cfHnY-unsplash.jpg" alt="Diamond 1">
+                <div class="diamond-info">
+                    <div class="diamond-title">Classic Diamond Ring</div>
+                    <div class="diamond-price">$999.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="diamond-box">
+                <img class="diamond-img" src="./asset/laark-boshoff-2hNnoJC9X1c-unsplash.jpg" alt="Diamond 2">
+                <div class="diamond-info">
+                    <div class="diamond-title">Elegant Diamond Necklace</div>
+                    <div class="diamond-price">$1499.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="diamond-box">
+                <img class="diamond-img" src="./asset/mark-s-johnson-tqAf-6l2utQ-unsplash.jpg" alt="Diamond 1">
+                <div class="diamond-info">
+                    <div class="diamond-title">Classic Diamond Ring</div>
+                    <div class="diamond-price">$999.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="diamond-box">
+                <img class="diamond-img" src="./asset/sabrianna-9_35SjwzpnU-unsplash.jpg" alt="Diamond 2">
+                <div class="diamond-info">
+                    <div class="diamond-title">Elegant Diamond Necklace</div>
+                    <div class="diamond-price">$1499.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <!-- Add more diamond boxes here -->
+            <!-- Repeat end -->
+        </div>
+
+        <div class="load-more-btn-diamond">
+            <button onclick="loadMoreDiamonds()">Load More</button>
+        </div>
+    </div>
+
+    <script>
+        let diamondsLoaded = 2; // Initial number of diamonds loaded
+
+        function loadMoreDiamonds() {
+            const diamondsContainer = document.querySelector('.diamonds-container');
+            const loadMoreBtn = document.querySelector('.load-more-btn-diamond button');
+
+            // Array of image paths for additional diamonds
+            const diamondImagePaths = [
+                "./diamonds-asset/diamond3.jpg",
+                "./diamonds-asset/diamond4.jpg",
+                "./diamonds-asset/diamond5.jpg",
+                "./diamonds-asset/diamond6.jpg",
+                // Add more image paths for diamonds here
+            ];
+
+            for (let i = 0; i < 3; i++) { // Load 3 more diamonds each time
+                // Create a new diamond box
+                const diamondBox = document.createElement('div');
+                diamondBox.classList.add('diamond-box');
+
+                // Create the diamond image
+                const diamondImg = document.createElement('img');
+                diamondImg.classList.add('diamond-img');
+                diamondImg.src = diamondImagePaths[diamondsLoaded % diamondImagePaths.length];
+                diamondImg.alt = `Diamond ${diamondsLoaded + i}`;
+
+                // Create the diamond info
+                const diamondInfo = document.createElement('div');
+                diamondInfo.classList.add('diamond-info');
+
+                // Create the diamond title
+                const diamondTitle = document.createElement('div');
+                diamondTitle.classList.add('diamond-title');
+                diamondTitle.textContent = `New Diamond ${diamondsLoaded + i}`;
+
+                // Create the diamond price
+                const diamondPrice = document.createElement('div');
+                diamondPrice.classList.add('diamond-price');
+                diamondPrice.textContent = '$1999.99'; // You can change the price here
+
+                // Create the Buy Now button
+                const buyNowBtn = document.createElement('button');
+                buyNowBtn.classList.add('buy-now-btn');
+                buyNowBtn.textContent = 'Buy Now';
+                buyNowBtn.onclick = buyNow;
+
+                // Append elements to the diamond info
+                diamondInfo.appendChild(diamondTitle);
+                diamondInfo.appendChild(diamondPrice);
+                diamondInfo.appendChild(buyNowBtn);
+
+                // Append the new diamond box to the container
+                diamondBox.appendChild(diamondImg);
+                diamondBox.appendChild(diamondInfo);
+                diamondsContainer.appendChild(diamondBox);
+
+                diamondsLoaded++; // Increment diamondsLoaded inside the loop
+            }
+
+            // If there are no more diamonds to load, hide the "Load More" button
+            if (diamondsLoaded > 5) { // Adjust the number based on your diamond collection
+                loadMoreBtn.style.display = 'none';
+            }
+        }
+
+        function buyNow(button) {
+            const diamondBox = button.closest('.diamond-box');
+            const diamondTitle = diamondBox.querySelector('.diamond-title').textContent;
+            const diamondPrice = diamondBox.querySelector('.diamond-price').textContent;
+
+            const message = `Check out this diamond:\nTitle: ${diamondTitle}\nPrice: ${diamondPrice}`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappLink = `https://wa.me/?text=${encodedMessage}`;
+
+            window.open(whatsappLink, '_blank');
+        }
+    </script>
+
+</body>
+
+</html>

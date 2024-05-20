@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendants Section</title>
+    <link rel="stylesheet" href="pendent.css">
+</head>
+
+<body>
+
+    <div class="full-width-image">
+        <img src="./asset/pendent.jpg" alt="Full Width Image">
+    </div>
+
+    <div class="pendants-section-main">
+        <h1>Pendants</h1>
+        <div class="pendants-container">
+            <!-- Repeat this block for each pendant box -->
+            <div class="pendant-box">
+                <img class="pendant-img" src="./asset/pendent (2).jpg" alt="Pendant 1">
+                <div class="pendant-info">
+                    <div class="pendant-title">Elegant Diamond Pendant</div>
+                    <div class="pendant-price">$99.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="pendant-box">
+                <img class="pendant-img" src="./asset/pendent (3).jpg" alt="Pendant 2">
+                <div class="pendant-info">
+                    <div class="pendant-title">Stylish Silver Pendant</div>
+                    <div class="pendant-price">$49.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="pendant-box">
+                <img class="pendant-img" src="./asset/pendent (13).jpg" alt="Pendant 1">
+                <div class="pendant-info">
+                    <div class="pendant-title">Elegant Diamond Pendant</div>
+                    <div class="pendant-price">$99.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="pendant-box">
+                <img class="pendant-img" src="./asset/pendent (5).jpg" alt="Pendant 2">
+                <div class="pendant-info">
+                    <div class="pendant-title">Stylish Silver Pendant</div>
+                    <div class="pendant-price">$49.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="pendant-box">
+                <img class="pendant-img" src="./asset/pendent (6).jpg" alt="Pendant 1">
+                <div class="pendant-info">
+                    <div class="pendant-title">Elegant Diamond Pendant</div>
+                    <div class="pendant-price">$99.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="pendant-box">
+                <img class="pendant-img" src="./asset/pendent (9).jpg" alt="Pendant 2">
+                <div class="pendant-info">
+                    <div class="pendant-title">Stylish Silver Pendant</div>
+                    <div class="pendant-price">$49.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="pendant-box">
+                <img class="pendant-img" src="./asset/pendent (10).jpg" alt="Pendant 1">
+                <div class="pendant-info">
+                    <div class="pendant-title">Elegant Diamond Pendant</div>
+                    <div class="pendant-price">$99.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="pendant-box">
+                <img class="pendant-img" src="./asset/pendent (11).jpg" alt="Pendant 2">
+                <div class="pendant-info">
+                    <div class="pendant-title">Stylish Silver Pendant</div>
+                    <div class="pendant-price">$49.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <!-- Repeat end -->
+        </div>
+
+        <div class="load-more-btn">
+            <button onclick="loadMorePendants()">Load More</button>
+        </div>
+    </div>
+
+    <script>
+        let pendantsLoaded = 1; // Initial number of pendants loaded
+
+        function loadMorePendants() {
+            const pendantsContainer = document.querySelector('.pendants-container');
+            const loadMoreBtn = document.querySelector('.load-more-btn button');
+
+            // Array of image paths
+            const imagePaths = [
+                "./pendant-assets/pendant3.jpg",
+                "./pendant-assets/pendant4.jpg",
+                "./pendant-assets/pendant5.jpg",
+                // Add more image paths here
+            ];
+
+            for (let i = 0; i < 3; i++) {
+                // Create a new pendant box
+                const pendantBox = document.createElement('div');
+                pendantBox.classList.add('pendant-box');
+
+                // Create the pendant image
+                const pendantImg = document.createElement('img');
+                pendantImg.classList.add('pendant-img');
+
+                // Set the src attribute based on pendantsLoaded
+                pendantImg.src = imagePaths[pendantsLoaded % imagePaths.length];
+                pendantImg.alt = `Pendant ${pendantsLoaded + i}`;
+
+                // Create the pendant info
+                const pendantInfo = document.createElement('div');
+                pendantInfo.classList.add('pendant-info');
+
+                // Create the pendant title
+                const pendantTitle = document.createElement('div');
+                pendantTitle.classList.add('pendant-title');
+                pendantTitle.textContent = `New Pendant ${pendantsLoaded + i}`;
+
+                // Create the pendant price
+                const pendantPrice = document.createElement('div');
+                pendantPrice.classList.add('pendant-price');
+                pendantPrice.textContent = '$99.99'; // You can change the price here
+
+                // Create the Buy Now button
+                const buyNowBtn = document.createElement('button');
+                buyNowBtn.classList.add('buy-now-btn');
+                buyNowBtn.textContent = 'Buy Now';
+                buyNowBtn.onclick = buyNow;
+
+                // Append elements to the pendant box
+                pendantInfo.appendChild(pendantTitle);
+                pendantInfo.appendChild(pendantPrice);
+                pendantInfo.appendChild(buyNowBtn);
+                pendantBox.appendChild(pendantImg);
+                pendantBox.appendChild(pendantInfo);
+
+                // Append the new pendant box to the container
+                pendantsContainer.appendChild(pendantBox);
+
+                pendantsLoaded++; // Increment pendantsLoaded inside the loop
+            }
+
+            // If there are no more pendants to load, hide the "Load More" button
+            if (pendantsLoaded > 6) { // Adjust the number based on your pendant collection
+                loadMoreBtn.style.display = 'none';
+            }
+        }
+
+        function buyNow(button) {
+            const pendantBox = button.closest('.pendant-box');
+            const pendantTitle = pendantBox.querySelector('.pendant-title').textContent;
+            const pendantPrice = pendantBox.querySelector('.pendant-price').textContent;
+
+            const message = `Check out this pendant:\nTitle: ${pendantTitle}\nPrice: ${pendantPrice}`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappLink = `https://wa.me/?text=${encodedMessage}`;
+
+            window.open(whatsappLink, '_blank');
+        }
+    </script>
+
+</body>
+
+</html>

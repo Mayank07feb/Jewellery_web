@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gifting Section</title>
+    <link rel="stylesheet" href="gifting.css">
+</head>
+
+<body>
+
+    <div class="full-width-image">
+        <img src="./asset/gift.jpg" alt="Full Width Image">
+    </div>
+
+    <div class="gifting-section-main">
+        <h1>Gifting Ideas</h1>
+        <div class="gifting-container">
+            <!-- Repeat this block for each gift box -->
+            <div class="gift-box">
+                <img class="gift-img" src="./asset/lauren-richmond-9bXKsMvgZtQ-unsplash.jpg" alt="Gift 1">
+                <div class="gift-info">
+                    <div class="gift-title">Luxury Watch</div>
+                    <div class="gift-price">$599.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="gift-box">
+                <img class="gift-img" src="./asset/ryan-pouncy--w_1-mvkfUA-unsplash.jpg" alt="Gift 2">
+                <div class="gift-info">
+                    <div class="gift-title">Designer Perfume</div>
+                    <div class="gift-price">$99.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="gift-box">
+                <img class="gift-img" src="../CHAINS/asset/atul-mohan-1T69hhZvbag-unsplash.jpg" alt="Gift 1">
+                <div class="gift-info">
+                    <div class="gift-title">Luxury Watch</div>
+                    <div class="gift-price">$599.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="gift-box">
+                <img class="gift-img" src="../BANGLES/asset/faseeh-fawaz-66D6YWDSK58-unsplash.jpg" alt="Gift 2">
+                <div class="gift-info">
+                    <div class="gift-title">Designer Perfume</div>
+                    <div class="gift-price">$99.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="gift-box">
+                <img class="gift-img" src="../Diamonds/asset/engin-akyurt-RFIpITqnaZw-unsplash.jpg" alt="Gift 1">
+                <div class="gift-info">
+                    <div class="gift-title">Luxury Watch</div>
+                    <div class="gift-price">$599.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="gift-box">
+                <img class="gift-img" src="../Earrings/earring asset/daihana-monares-oWFPDjxuyUM-unsplash.jpg" alt="Gift 2">
+                <div class="gift-info">
+                    <div class="gift-title">Designer Perfume</div>
+                    <div class="gift-price">$99.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="gift-box">
+                <img class="gift-img" src="../GOLD-COINS/asset/dmytro-demidko-z4VuRg-ZOEg-unsplash.jpg" alt="Gift 1">
+                <div class="gift-info">
+                    <div class="gift-title">Luxury Watch</div>
+                    <div class="gift-price">$599.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="gift-box">
+                <img class="gift-img" src="../PENDENT/asset/pendent (11).jpg" alt="Gift 2">
+                <div class="gift-info">
+                    <div class="gift-title">Designer Perfume</div>
+                    <div class="gift-price">$99.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <!-- Repeat end -->
+        </div>
+
+        <div class="load-more-btn">
+            <button onclick="loadMoreGifts()">Load More</button>
+        </div>
+    </div>
+
+    <script>
+        let giftsLoaded = 2; // Initial number of gifts loaded
+
+        function loadMoreGifts() {
+            const giftsContainer = document.querySelector('.gifting-container');
+            const loadMoreBtn = document.querySelector('.load-more-btn button');
+
+            // Array of image paths
+            const imagePaths = [
+                "./gift-assets/gift3.jpg",
+                "./gift-assets/gift4.jpg",
+                "./gift-assets/gift5.jpg",
+                // Add more image paths here
+            ];
+
+            for (let i = 0; i < 3; i++) {
+                // Create a new gift box
+                const giftBox = document.createElement('div');
+                giftBox.classList.add('gift-box');
+
+                // Create the gift image
+                const giftImg = document.createElement('img');
+                giftImg.classList.add('gift-img');
+
+                // Set the src attribute based on giftsLoaded
+                giftImg.src = imagePaths[giftsLoaded % imagePaths.length];
+                giftImg.alt = `Gift ${giftsLoaded + i}`;
+
+                // Create the gift info
+                const giftInfo = document.createElement('div');
+                giftInfo.classList.add('gift-info');
+
+                // Create the gift title
+                const giftTitle = document.createElement('div');
+                giftTitle.classList.add('gift-title');
+                giftTitle.textContent = `New Gift ${giftsLoaded + i}`;
+
+                // Create the gift price
+                const giftPrice = document.createElement('div');
+                giftPrice.classList.add('gift-price');
+                giftPrice.textContent = '$299.99'; // You can change the price here
+
+                // Create the Buy Now button
+                const buyNowBtn = document.createElement('button');
+                buyNowBtn.classList.add('buy-now-btn');
+                buyNowBtn.textContent = 'Buy Now';
+                buyNowBtn.onclick = buyNow;
+
+                // Append elements to the gift box
+                giftInfo.appendChild(giftTitle);
+                giftInfo.appendChild(giftPrice);
+                giftInfo.appendChild(buyNowBtn);
+                giftBox.appendChild(giftImg);
+                giftBox.appendChild(giftInfo);
+
+                // Append the new gift box to the container
+                giftsContainer.appendChild(giftBox);
+
+                giftsLoaded++; // Increment giftsLoaded inside the loop
+            }
+
+            // If there are no more gifts to load, hide the "Load More" button
+            if (giftsLoaded > 5) { // Adjust the number based on your gift collection
+                loadMoreBtn.style.display = 'none';
+            }
+        }
+
+        function buyNow(button) {
+            const giftBox = button.closest('.gift-box');
+            const giftTitle = giftBox.querySelector('.gift-title').textContent;
+            const giftPrice = giftBox.querySelector('.gift-price').textContent;
+
+            const message = `Check out this gift:\nTitle: ${giftTitle}\nPrice: ${giftPrice}`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappLink = `https://wa.me/?text=${encodedMessage}`;
+
+            window.open(whatsappLink, '_blank');
+        }
+    </script>
+
+</body>
+
+</html>

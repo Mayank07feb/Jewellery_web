@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Jewellery Section</title>
+    <link rel="stylesheet" href="gold.css">
+</head>
+
+<body>
+
+    <div class="full-width-image-gold">
+        <img src="./asset/gold (2).jpg" alt="Full Width Image">
+    </div>
+
+    <div class="gold-jewellery-section-main">
+        <h1>Gold Jewellery</h1>
+        <div class="gold-jewellery-container">
+            <!-- Repeat this block for each jewellery box -->
+            <div class="jewellery-box">
+                <img class="jewellery-img" src="./asset/tara-yates-ZL7JpQ3d1Yk-unsplash.jpg" alt="Jewellery 1">
+                <div class="jewellery-info">
+                    <div class="jewellery-title">Elegant Gold Necklace</div>
+                    <div class="jewellery-price">$1499.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="jewellery-box">
+                <img class="jewellery-img" src="./asset/akhilesh-sharma-itriu-lCKzs-unsplash.jpg" alt="Jewellery 2">
+                <div class="jewellery-info">
+                    <div class="jewellery-title">Gold Bracelet with Diamonds</div>
+                    <div class="jewellery-price">$799.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="jewellery-box">
+                <img class="jewellery-img" src="./asset/alex-azabache-y2ErhoE92KA-unsplash.jpg" alt="Jewellery 1">
+                <div class="jewellery-info">
+                    <div class="jewellery-title">Elegant Gold Necklace</div>
+                    <div class="jewellery-price">$1499.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="jewellery-box">
+                <img class="jewellery-img" src="./asset/alireza-zarafshani-7CnWk58BsFk-unsplash.jpg" alt="Jewellery 2">
+                <div class="jewellery-info">
+                    <div class="jewellery-title">Gold Bracelet with Diamonds</div>
+                    <div class="jewellery-price">$799.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="jewellery-box">
+                <img class="jewellery-img" src="./asset/asal-mshk-fytw4NSCeT4-unsplash.jpg" alt="Jewellery 1">
+                <div class="jewellery-info">
+                    <div class="jewellery-title">Elegant Gold Necklace</div>
+                    <div class="jewellery-price">$1499.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="jewellery-box">
+                <img class="jewellery-img" src="./asset/bulbul-ahmed-KVoWg1W2ztk-unsplash.jpg" alt="Jewellery 2">
+                <div class="jewellery-info">
+                    <div class="jewellery-title">Gold Bracelet with Diamonds</div>
+                    <div class="jewellery-price">$799.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="jewellery-box">
+                <img class="jewellery-img" src="./asset/felipe-salgado-Z4BJfx59yqY-unsplash.jpg" alt="Jewellery 1">
+                <div class="jewellery-info">
+                    <div class="jewellery-title">Elegant Gold Necklace</div>
+                    <div class="jewellery-price">$1499.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="jewellery-box">
+                <img class="jewellery-img" src="./asset/khizar-rathore-AoZrJQ80KCc-unsplash.jpg" alt="Jewellery 2">
+                <div class="jewellery-info">
+                    <div class="jewellery-title">Gold Bracelet with Diamonds</div>
+                    <div class="jewellery-price">$799.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <!-- Add more jewellery boxes here -->
+            <!-- Repeat end -->
+        </div>
+
+        <div class="load-more-btn-gold">
+            <button onclick="loadMoreJewellery()">Load More</button>
+        </div>
+    </div>
+
+    <script>
+        let jewelleryLoaded = 2; // Initial number of jewellery items loaded
+        let loadMoreCount = 0; // Counter to track how many times "Load More" has been clicked
+
+        function loadMoreJewellery() {
+            const jewelleryContainer = document.querySelector('.gold-jewellery-container');
+            const loadMoreBtn = document.querySelector('.load-more-btn-gold button');
+
+            // Array of image paths for additional jewellery items
+            const jewelleryImagePaths = [
+                "./asset/sayak-bala-qdg5cHUuTCU-unsplash.jpg",
+                "./asset/samar-ahmad-zz6-LqiW4mY-unsplash.jpg",
+                "./asset/sabrianna-WAbhmJQbnCA-unsplash.jpg",
+                "./asset/tara-yates-ZL7JpQ3d1Yk-unsplash.jpg",
+                // Add more image paths for jewellery here
+            ];
+
+            for (let i = 0; i < 3; i++) { // Load 3 more jewellery items each time
+                if (jewelleryLoaded >= 8) { // Stop loading after 2 more clicks
+                    loadMoreBtn.style.display = 'none';
+                    return; // Exit the function
+                }
+
+                // Create a new jewellery box
+                const jewelleryBox = document.createElement('div');
+                jewelleryBox.classList.add('jewellery-box');
+
+                // Create the jewellery image
+                const jewelleryImg = document.createElement('img');
+                jewelleryImg.classList.add('jewellery-img');
+                jewelleryImg.src = jewelleryImagePaths[jewelleryLoaded % jewelleryImagePaths.length];
+                jewelleryImg.alt = `Jewellery ${jewelleryLoaded + i}`;
+
+                // Create the jewellery info
+                const jewelleryInfo = document.createElement('div');
+                jewelleryInfo.classList.add('jewellery-info');
+
+                // Create the jewellery title
+                const jewelleryTitle = document.createElement('div');
+                jewelleryTitle.classList.add('jewellery-title');
+                jewelleryTitle.textContent = `New Jewellery ${jewelleryLoaded + i}`;
+
+                // Create the jewellery price
+                const jewelleryPrice = document.createElement('div');
+                jewelleryPrice.classList.add('jewellery-price');
+                jewelleryPrice.textContent = '$1999.99'; // You can change the price here
+
+                // Create the Buy Now button
+                const buyNowBtn = document.createElement('button');
+                buyNowBtn.classList.add('buy-now-btn');
+                buyNowBtn.textContent = 'Buy Now';
+                buyNowBtn.onclick = buyNow;
+
+                // Append elements to the jewellery info
+                jewelleryInfo.appendChild(jewelleryTitle);
+                jewelleryInfo.appendChild(jewelleryPrice);
+                jewelleryInfo.appendChild(buyNowBtn);
+
+                // Append the new jewellery box to the container
+                jewelleryBox.appendChild(jewelleryImg);
+                jewelleryBox.appendChild(jewelleryInfo);
+                jewelleryContainer.appendChild(jewelleryBox);
+
+                jewelleryLoaded++; // Increment jewelleryLoaded inside the loop
+            }
+
+            loadMoreCount++; // Increment loadMoreCount each time "Load More" is clicked
+            if (loadMoreCount >= 2) { // Hide "Load More" button after 2 clicks
+                loadMoreBtn.style.display = 'none';
+            }
+        }
+
+
+        function buyNow(button) {
+            const jewelleryBox = button.closest('.jewellery-box');
+            const jewelleryTitle = jewelleryBox.querySelector('.jewellery-title').textContent;
+            const jewelleryPrice = jewelleryBox.querySelector('.jewellery-price').textContent;
+
+            const message = `Check out this jewellery item:\nTitle: ${jewelleryTitle}\nPrice: ${jewelleryPrice}`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappLink = `https://wa.me/?text=${encodedMessage}`;
+
+            window.open(whatsappLink, '_blank');
+        }
+    </script>
+
+</body>
+
+</html>

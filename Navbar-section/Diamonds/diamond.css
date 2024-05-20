@@ -1,0 +1,153 @@
+/* Container Styles */
+.diamond_section_main {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.diamond_section_main h1 {
+    padding-top: 20px;
+    text-align: center;
+    color: goldenrod;
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Full Width Image Styles */
+.full-width-image-diamond {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.full-width-image-diamond img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Diamonds Container Styles */
+.diamonds-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.diamond-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    background-color: #fff;
+    height: 100%;
+}
+
+.diamond-box:hover {
+    transform: scale(1.05);
+}
+
+.diamond-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px 15px 0 0;
+}
+
+.diamond-info {
+    border-radius: 0 0 15px 15px;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.diamond-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.diamond-price {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Load More Button Styles */
+.load-more-btn-diamond {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.load-more-btn-diamond button {
+    padding: 14px 28px;
+    background-color: #ff8c00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.load-more-btn-diamond button:hover {
+    background-color: #ff7f50;
+}
+
+.buy-now-btn {
+    padding: 10px 20px;
+    background-color: #ff8c00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+
+.buy-now-btn:hover {
+    background-color: #ff7f50;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .diamond_section_main h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .diamond-box {
+        width: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .diamond_section_main h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .diamond-box {
+        width: calc(100% - 20px);
+    }
+}

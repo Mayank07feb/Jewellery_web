@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Necklaces Section</title>
+    <link rel="stylesheet" href="necklaces.css">
+</head>
+
+<body>
+
+    <div class="full-width-image">
+        <img src="./asset/necklace.jpg" alt="Full Width Image">
+    </div>
+
+    <div class="necklaces-section-main">
+        <h1>Necklaces</h1>
+        <div class="necklaces-container">
+            <!-- Repeat this block for each necklace box -->
+            <div class="necklace-box">
+                <img class="necklace-img" src="./asset/vaibhav-nagare-vv2vIFeNEMg-unsplash.jpg" alt="Necklace 1">
+                <div class="necklace-info">
+                    <div class="necklace-title">Exquisite Pearl Necklace</div>
+                    <div class="necklace-price">$299.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="necklace-box">
+                <img class="necklace-img" src="./asset/birmingham-museums-trust-_K7lvl85QH0-unsplash.jpg" alt="Necklace 2">
+                <div class="necklace-info">
+                    <div class="necklace-title">Charming Diamond Necklace</div>
+                    <div class="necklace-price">$399.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="necklace-box">
+                <img class="necklace-img" src="./asset/cornelia-ng-2zHQhfEpisc-unsplash.jpg" alt="Necklace 1">
+                <div class="necklace-info">
+                    <div class="necklace-title">Exquisite Pearl Necklace</div>
+                    <div class="necklace-price">$299.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="necklace-box">
+                <img class="necklace-img" src="./asset/liam-li-fiyt10imFxU-unsplash.jpg" alt="Necklace 2">
+                <div class="necklace-info">
+                    <div class="necklace-title">Charming Diamond Necklace</div>
+                    <div class="necklace-price">$399.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="necklace-box">
+                <img class="necklace-img" src="./asset/muhammad-shah-zeb-e45jST23mH8-unsplash.jpg" alt="Necklace 1">
+                <div class="necklace-info">
+                    <div class="necklace-title">Exquisite Pearl Necklace</div>
+                    <div class="necklace-price">$299.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="necklace-box">
+                <img class="necklace-img" src="./asset/sheilabox-YTBtv7BG2uI-unsplash.jpg" alt="Necklace 2">
+                <div class="necklace-info">
+                    <div class="necklace-title">Charming Diamond Necklace</div>
+                    <div class="necklace-price">$399.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="necklace-box">
+                <img class="necklace-img" src="./asset/robert-thiemann-2XznNlMG8Ck-unsplash.jpg" alt="Necklace 1">
+                <div class="necklace-info">
+                    <div class="necklace-title">Exquisite Pearl Necklace</div>
+                    <div class="necklace-price">$299.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="necklace-box">
+                <img class="necklace-img" src="./asset/sheilabox-amUsSXAA6bw-unsplash.jpg" alt="Necklace 2">
+                <div class="necklace-info">
+                    <div class="necklace-title">Charming Diamond Necklace</div>
+                    <div class="necklace-price">$399.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <!-- Repeat end -->
+        </div>
+
+        <div class="load-more-btn">
+            <button onclick="loadMoreNecklaces()">Load More</button>
+        </div>
+    </div>
+
+    <script>
+        let necklacesLoaded = 2; // Initial number of necklaces loaded
+
+        function loadMoreNecklaces() {
+            const necklacesContainer = document.querySelector('.necklaces-container');
+            const loadMoreBtn = document.querySelector('.load-more-btn button');
+
+            // Array of image paths
+            const imagePaths = [
+                "./necklace-assets/necklace3.jpg",
+                "./necklace-assets/necklace4.jpg",
+                "./necklace-assets/necklace5.jpg",
+                // Add more image paths here
+            ];
+
+            for (let i = 0; i < 3; i++) {
+                // Create a new necklace box
+                const necklaceBox = document.createElement('div');
+                necklaceBox.classList.add('necklace-box');
+
+                // Create the necklace image
+                const necklaceImg = document.createElement('img');
+                necklaceImg.classList.add('necklace-img');
+
+                // Set the src attribute based on necklacesLoaded
+                necklaceImg.src = imagePaths[necklacesLoaded % imagePaths.length];
+                necklaceImg.alt = `Necklace ${necklacesLoaded + i}`;
+
+                // Create the necklace info
+                const necklaceInfo = document.createElement('div');
+                necklaceInfo.classList.add('necklace-info');
+
+                // Create the necklace title
+                const necklaceTitle = document.createElement('div');
+                necklaceTitle.classList.add('necklace-title');
+                necklaceTitle.textContent = `New Necklace ${necklacesLoaded + i}`;
+
+                // Create the necklace price
+                const necklacePrice = document.createElement('div');
+                necklacePrice.classList.add('necklace-price');
+                necklacePrice.textContent = '$299.99'; // You can change the price here
+
+                // Create the Buy Now button
+                const buyNowBtn = document.createElement('button');
+                buyNowBtn.classList.add('buy-now-btn');
+                buyNowBtn.textContent = 'Buy Now';
+                buyNowBtn.onclick = buyNow;
+
+                // Append elements to the necklace box
+                necklaceInfo.appendChild(necklaceTitle);
+                necklaceInfo.appendChild(necklacePrice);
+                necklaceInfo.appendChild(buyNowBtn);
+                necklaceBox.appendChild(necklaceImg);
+                necklaceBox.appendChild(necklaceInfo);
+
+                // Append the new necklace box to the container
+                necklacesContainer.appendChild(necklaceBox);
+
+                necklacesLoaded++; // Increment necklacesLoaded inside the loop
+            }
+
+            // If there are no more necklaces to load, hide the "Load More" button
+            if (necklacesLoaded > 5) { // Adjust the number based on your necklace collection
+                loadMoreBtn.style.display = 'none';
+            }
+        }
+
+        function buyNow(button) {
+            const necklaceBox = button.closest('.necklace-box');
+            const necklaceTitle = necklaceBox.querySelector('.necklace-title').textContent;
+            const necklacePrice = necklaceBox.querySelector('.necklace-price').textContent;
+
+            const message = `Check out this necklace:\nTitle: ${necklaceTitle}\nPrice: ${necklacePrice}`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappLink = `https://wa.me/?text=${encodedMessage}`;
+
+            window.open(whatsappLink, '_blank');
+        }
+    </script>
+
+</body>
+
+</html>

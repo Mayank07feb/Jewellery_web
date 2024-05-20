@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangles Section</title>
+    <link rel="stylesheet" href="bangles.css">
+</head>
+
+<body>
+
+    <div class="full-width-image">
+        <img src="./asset/bangles.jpg" alt="Full Width Image">
+    </div>
+
+    <div class="bangles-section-main">
+        <h1>Bangles</h1>
+        <div class="bangles-container">
+            <!-- Repeat this block for each bangle box -->
+            <div class="bangle-box">
+                <img class="bangle-img" src="./asset/bishorjit-konsam-WAL3EPeSMGU-unsplash.jpg" alt="Bangle 1">
+                <div class="bangle-info">
+                    <div class="bangle-title">Elegant Gold Plated Bangles</div>
+                    <div class="bangle-price">$69.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="bangle-box">
+                <img class="bangle-img" src="./asset/faseeh-fawaz-66D6YWDSK58-unsplash.jpg" alt="Bangle 1">
+                <div class="bangle-info">
+                    <div class="bangle-title">Elegant Gold Plated Bangles</div>
+                    <div class="bangle-price">$69.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="bangle-box">
+                <img class="bangle-img" src="./asset/khizar-rathore-AoZrJQ80KCc-unsplash.jpg" alt="Bangle 1">
+                <div class="bangle-info">
+                    <div class="bangle-title">Elegant Gold Plated Bangles</div>
+                    <div class="bangle-price">$69.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="bangle-box">
+                <img class="bangle-img" src="./asset/khizar-rathore-eCL4KzJKfaw-unsplash.jpg" alt="Bangle 1">
+                <div class="bangle-info">
+                    <div class="bangle-title">Elegant Gold Plated Bangles</div>
+                    <div class="bangle-price">$69.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="bangle-box">
+                <img class="bangle-img" src="./asset/khizar-rathore-xQ9HeP870EE-unsplash.jpg" alt="Bangle 1">
+                <div class="bangle-info">
+                    <div class="bangle-title">Elegant Gold Plated Bangles</div>
+                    <div class="bangle-price">$69.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="bangle-box">
+                <img class="bangle-img" src="./asset/lum3n-lbEL705stOw-unsplash.jpg" alt="Bangle 1">
+                <div class="bangle-info">
+                    <div class="bangle-title">Elegant Gold Plated Bangles</div>
+                    <div class="bangle-price">$69.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="bangle-box">
+                <img class="bangle-img" src="./asset/ruan-richard-rodrigues-O7YCeE_65TE-unsplash.jpg" alt="Bangle 1">
+                <div class="bangle-info">
+                    <div class="bangle-title">Elegant Gold Plated Bangles</div>
+                    <div class="bangle-price">$69.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="bangle-box">
+                <img class="bangle-img" src="./asset/mansi-shah-cDcAmSCru9E-unsplash.jpg" alt="Bangle 1">
+                <div class="bangle-info">
+                    <div class="bangle-title">Elegant Gold Plated Bangles</div>
+                    <div class="bangle-price">$69.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <!-- Repeat end -->
+        </div>
+
+        <div class="load-more-btn">
+            <button onclick="loadMoreBangles()">Load More</button>
+        </div>
+    </div>
+
+    <script>
+        let banglesLoaded = 1; // Initial number of bangles loaded
+
+        function loadMoreBangles() {
+            const banglesContainer = document.querySelector('.bangles-container');
+            const loadMoreBtn = document.querySelector('.load-more-btn button');
+
+            // Array of image paths
+            const imagePaths = [
+                "./bangle-assets/bangle2.jpg",
+                "./bangle-assets/bangle3.jpg",
+                "./bangle-assets/bangle4.jpg",
+                // Add more image paths here
+            ];
+
+            for (let i = 0; i < 3; i++) {
+                // Create a new bangle box
+                const bangleBox = document.createElement('div');
+                bangleBox.classList.add('bangle-box');
+
+                // Create the bangle image
+                const bangleImg = document.createElement('img');
+                bangleImg.classList.add('bangle-img');
+
+                // Set the src attribute based on banglesLoaded
+                bangleImg.src = imagePaths[banglesLoaded % imagePaths.length];
+                bangleImg.alt = `Bangle ${banglesLoaded + i}`;
+
+                // Create the bangle info
+                const bangleInfo = document.createElement('div');
+                bangleInfo.classList.add('bangle-info');
+
+                // Create the bangle title
+                const bangleTitle = document.createElement('div');
+                bangleTitle.classList.add('bangle-title');
+                bangleTitle.textContent = `New Bangle ${banglesLoaded + i}`;
+
+                // Create the bangle price
+                const banglePrice = document.createElement('div');
+                banglePrice.classList.add('bangle-price');
+                banglePrice.textContent = '$69.99'; // You can change the price here
+
+                // Create the Buy Now button
+                const buyNowBtn = document.createElement('button');
+                buyNowBtn.classList.add('buy-now-btn');
+                buyNowBtn.textContent = 'Buy Now';
+                buyNowBtn.onclick = buyNow;
+
+                // Append elements to the bangle box
+                bangleInfo.appendChild(bangleTitle);
+                bangleInfo.appendChild(banglePrice);
+                bangleInfo.appendChild(buyNowBtn);
+                bangleBox.appendChild(bangleImg);
+                bangleBox.appendChild(bangleInfo);
+
+                // Append the new bangle box to the container
+                banglesContainer.appendChild(bangleBox);
+
+                banglesLoaded++; // Increment banglesLoaded inside the loop
+            }
+
+            // If there are no more bangles to load, hide the "Load More" button
+            if (banglesLoaded > 10) { // Adjust the number based on your bangle collection
+                loadMoreBtn.style.display = 'none';
+            }
+        }
+
+        function buyNow(button) {
+            const bangleBox = button.closest('.bangle-box');
+            const bangleTitle = bangleBox.querySelector('.bangle-title').textContent;
+            const banglePrice = bangleBox.querySelector('.bangle-price').textContent;
+
+            const message = `Check out this bangle:\nTitle: ${bangleTitle}\nPrice: ${banglePrice}`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappLink = `https://wa.me/?text=${encodedMessage}`;
+
+            window.open(whatsappLink, '_blank');
+        }
+    </script>
+
+</body>
+
+</html>

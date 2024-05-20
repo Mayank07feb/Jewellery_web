@@ -1,0 +1,161 @@
+/* Container Styles */
+.pendants-section-main {
+    background-color: #f8f8f8; /* Light gray background */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.pendants-section-main h1 {
+    padding-top: 20px;
+    text-align: center;
+    color: goldenrod; /* Dark text color */
+    font-size: 36px; /* Large font size for the heading */
+    margin-bottom: 20px; /* Reduced margin bottom */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold; /* Increase font weight for a bolder appearance */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a shadow for a 3D effect */
+    transition: transform 3s, text-shadow 3s; /* Transition for transform and text-shadow */
+}
+
+.pendants-section-main h1:hover {
+    transform: rotateY(360deg); /* Rotate the text on hover */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.75); /* Intensify the shadow on hover for a stronger 3D effect */
+}
+
+/* Full Width Image Styles */
+.full-width-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.full-width-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Pendants Container Styles */
+.pendants-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff; /* White background */
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.pendant-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.3s ease-in-out;
+    background-color: #fff;
+    height: 100%; /* Make the pendant box take full height */
+}
+
+.pendant-box:hover {
+    transform: scale(1.05);
+}
+
+.pendant-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px 15px 0 0;
+}
+
+.pendant-info {
+    border-radius: 0 0 15px 15px;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.pendant-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.pendant-price {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Load More Button Styles */
+.load-more-btn {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.load-more-btn button {
+    padding: 14px 28px;
+    background-color: #ff8c00; /* Orange color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.load-more-btn button:hover {
+    background-color: #ff7f50; /* Lighter shade on hover */
+}
+
+.buy-now-btn {
+    padding: 10px 20px;
+    background-color: #ff8c00; /* Orange color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: auto; /* Align button at the bottom */
+    margin-bottom: 10px; /* Add space below the button */
+}
+
+.buy-now-btn:hover {
+    background-color: #ff7f50; /* Lighter shade on hover */
+}
+
+/* Add media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .pendants-section-main h1 {
+        font-size: 24px; /* Decreased font size for smaller screens */
+        margin-bottom: 20px; /* Decreased margin bottom for smaller screens */
+    }
+
+    .pendant-box {
+        width: calc(50% - 20px); /* Two columns on smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .pendants-section-main h1 {
+        font-size: 20px; /* Further decreased font size for smaller screens */
+        margin-bottom: 10px; /* Further decreased margin bottom for smaller screens */
+    }
+
+    .pendant-box {
+        width: calc(100% - 20px); /* Single column on even smaller screens */
+    }
+}

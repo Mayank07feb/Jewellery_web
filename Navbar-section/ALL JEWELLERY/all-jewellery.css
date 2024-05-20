@@ -1,0 +1,760 @@
+/* Gold Jewellery Container Styles Start */
+
+/* Container Styles */
+.gold_section_main {
+    background-color: #f8f8f8;
+    /* Light gray background */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+}
+
+.gold_section_main h1 {
+    padding: 20px;
+    /* Padding around the text */
+    text-align: center;
+    /* Center align text */
+    color: #fff;
+    /* White text color */
+    font-size: 36px;
+    /* Large font size for the heading */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Font family */
+    background: linear-gradient(to right, #ffd700, goldenrod);
+    /* Gradient background */
+    border-radius: 20px;
+    /* Border radius for rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    /* Soft shadow effect */
+    margin-bottom: 30px;
+    /* Margin from the bottom */
+    line-height: 1.5;
+    /* Line height for better spacing */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0px 0px 5px rgba(255, 255, 255, 0.329)
+}
+
+/* Gold Jewellery Container Styles */
+.gold-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.gold-container:hover {
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.jewellery-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    background-color: #fff;
+    height: 100%;
+}
+
+.jewellery-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.jewellery-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px 15px 0 0;
+}
+
+.jewellery-info {
+    border-radius: 0 0 15px 15px;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.jewellery-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.jewellery-price {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Load More Button Styles */
+.load-more-btn-gold {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.load-more-btn-gold button {
+    padding: 14px 28px;
+    background-color: #ff8c00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.load-more-btn-gold button:hover {
+    background-color: #ff7f50;
+}
+
+.buy-now-btn {
+    padding: 10px 20px;
+    background-color: #ff8c00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+
+.buy-now-btn:hover {
+    background-color: #ff7f50;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+    .gold_section_main h1 {
+        font-size: 24px;
+        /* Decreased font size for smaller screens */
+        margin-bottom: 20px;
+        /* Decreased margin bottom for smaller screens */
+    }
+
+    .jewellery-box {
+        width: calc(50% - 20px);
+        /* Two columns on smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gold_section_main h1 {
+        font-size: 20px;
+        /* Further decreased font size for smaller screens */
+        margin-bottom: 10px;
+        /* Further decreased margin bottom for smaller screens */
+    }
+
+    .jewellery-box {
+        width: calc(100% - 20px);
+        /* Single column on even smaller screens */
+    }
+}
+
+
+/* Gold Jewellery Container Styles End */
+
+
+
+
+
+/*Diamond Container Styles Start */
+
+
+/* Container Styles */
+.diamond_section_main {
+    background-color: #f8f8f8;
+    /* Light gray background */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+}
+
+.diamond_section_main h1 {
+    padding: 20px;
+    /* Padding around the text */
+    text-align: center;
+    /* Center align text */
+    color: #fff;
+    /* White text color */
+    font-size: 36px;
+    /* Large font size for the heading */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Font family */
+    background: linear-gradient(to right, #ffd700, goldenrod);
+    /* Gradient background */
+    border-radius: 20px;
+    /* Border radius for rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    /* Soft shadow effect */
+    margin-bottom: 30px;
+    /* Margin from the bottom */
+    line-height: 1.5;
+    /* Line height for better spacing */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0px 0px 5px rgba(255, 255, 255, 0.329)
+}
+
+/* Full Width Image Styles */
+.full-width-image-diamond {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+}
+
+.full-width-image-diamond img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+}
+
+/* Diamonds Container Styles */
+.diamond-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    /* White background */
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+}
+
+.diamond-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+    transition: transform 0.3s ease-in-out;
+    background-color: #fff;
+    height: 100%;
+    /* Make the diamond box take full height */
+}
+
+.diamond-box:hover {
+    transform: scale(1.05);
+}
+
+.diamond-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px 15px 0 0;
+}
+
+.diamond-info {
+    border-radius: 0 0 15px 15px;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.diamond-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.diamond-price {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Load More Button Styles */
+.load-more-btn-diamond {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.load-more-btn-diamond button {
+    padding: 14px 28px;
+    background-color: #ff8c00;
+    /* Orange color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.load-more-btn-diamond button:hover {
+    background-color: #ff7f50;
+    /* Lighter shade on hover */
+}
+
+.buy-now-btn {
+    padding: 10px 20px;
+    background-color: #ff8c00;
+    /* Orange color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
+    /* Align button at the bottom */
+    margin-bottom: 10px;
+    /* Add space below the button */
+}
+
+.buy-now-btn:hover {
+    background-color: #ff7f50;
+    /* Lighter shade on hover */
+}
+
+/* Add media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .diamond_section_main h1 {
+        font-size: 24px;
+        /* Decreased font size for smaller screens */
+        margin-bottom: 20px;
+        /* Decreased margin bottom for smaller screens */
+    }
+
+    .diamond-box {
+        width: calc(50% - 20px);
+        /* Two columns on smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .diamond_section_main h1 {
+        font-size: 20px;
+        /* Further decreased font size for smaller screens */
+        margin-bottom: 10px;
+        /* Further decreased margin bottom for smaller screens */
+    }
+
+    .diamond-box {
+        width: calc(100% - 20px);
+        /* Single column on even smaller screens */
+    }
+}
+
+
+/*Diamond Container Styles End */
+
+
+
+
+/* Earrings Section Styles Start*/
+
+
+/* Container Styles */
+.earring_section_main {
+    background-color: #f8f8f8;
+    /* Light gray background */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+}
+
+
+/* Earrings Section Heading Styles */
+.earring_section_main h1 {
+    padding: 20px;
+    /* Padding around the text */
+    text-align: center;
+    /* Center align text */
+    color: #fff;
+    /* White text color */
+    font-size: 36px;
+    /* Large font size for the heading */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Font family */
+    background: linear-gradient(to right, #ffd700, goldenrod);
+    /* Gradient background */
+    border-radius: 20px;
+    /* Border radius for rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    /* Soft shadow effect */
+    margin-bottom: 30px;
+    /* Margin from the bottom */
+    line-height: 1.5;
+    /* Line height for better spacing */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0px 0px 5px rgba(255, 255, 255, 0.329);
+    /* Text shadow for 3D effect */
+}
+
+/* Full Width Image Styles */
+.full-width-image-earring {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+}
+
+.full-width-image-earring img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+}
+
+/* Earrings Container Styles */
+.earrings-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    /* White background */
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+}
+
+.earring-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+    transition: transform 0.3s ease-in-out;
+    background-color: #fff;
+    height: 100%;
+    /* Make the earring box take full height */
+}
+
+.earring-box:hover {
+    transform: scale(1.05);
+}
+
+.earring-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px 15px 0 0;
+}
+
+.earring-info {
+    border-radius: 0 0 15px 15px;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.earring-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.earring-price {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Load More Button Styles */
+.load-more-btn-earring {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.load-more-btn-earring button {
+    padding: 14px 28px;
+    background-color: #ff8c00;
+    /* Orange color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.load-more-btn-earring button:hover {
+    background-color: #ff7f50;
+    /* Lighter shade on hover */
+}
+
+.buy-now-btn {
+    padding: 10px 20px;
+    background-color: #ff8c00;
+    /* Orange color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
+    /* Align button at the bottom */
+    margin-bottom: 10px;
+    /* Add space below the button */
+}
+
+.buy-now-btn:hover {
+    background-color: #ff7f50;
+    /* Lighter shade on hover */
+}
+
+/* Add media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .earring_section_main h1 {
+        font-size: 24px;
+        /* Decreased font size for smaller screens */
+        margin-bottom: 20px;
+        /* Decreased margin bottom for smaller screens */
+    }
+
+    .earring-box {
+        width: calc(50% - 20px);
+        /* Two columns on smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .earring_section_main h1 {
+        font-size: 20px;
+        /* Further decreased font size for smaller screens */
+        margin-bottom: 10px;
+        /* Further decreased margin bottom for smaller screens */
+    }
+
+    .earring-box {
+        width: calc(100% - 20px);
+        /* Single column on even smaller screens */
+    }
+}
+
+
+/* Earrings Section Styles End*/
+
+
+
+
+/* Ring Container Styles Start*/
+
+/* Container Styles */
+.ring_section_main {
+    background-color: #f8f8f8;
+    /* Light gray background */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+}
+
+.ring_section_main h1 {
+    padding: 20px;
+    /* Padding around the text */
+    text-align: center;
+    /* Center align text */
+    color: #fff;
+    /* White text color */
+    font-size: 36px;
+    /* Large font size for the heading */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Font family */
+    background: linear-gradient(to right, #ffd700, goldenrod);
+    /* Gradient background */
+    border-radius: 20px;
+    /* Border radius for rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    /* Soft shadow effect */
+    margin-bottom: 30px;
+    /* Margin from the bottom */
+    line-height: 1.5;
+    /* Line height for better spacing */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0px 0px 5px rgba(255, 255, 255, 0.329)
+}
+
+/* Full Width Image Styles */
+.full-width-image-ring {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+}
+
+.full-width-image-ring img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+}
+
+/* Ring Container Styles */
+.ring-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    /* White background */
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+}
+
+.jewellery-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+    transition: transform 0.3s ease-in-out;
+    background-color: #fff;
+    height: 100%;
+    /* Make the ring box take full height */
+}
+
+.jewellery-box:hover {
+    transform: scale(1.05);
+}
+
+.jewellery-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px 15px 0 0;
+}
+
+.jewellery-info {
+    border-radius: 0 0 15px 15px;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.jewellery-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.jewellery-price {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Load More Button Styles */
+.load-more-btn-ring {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.load-more-btn-ring button {
+    padding: 14px 28px;
+    background-color: #ff8c00;
+    /* Orange color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.load-more-btn-ring button:hover {
+    background-color: #ff7f50;
+    /* Lighter shade on hover */
+}
+
+.buy-now-btn {
+    padding: 10px 20px;
+    background-color: #ff8c00;
+    /* Orange color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: auto;
+    /* Align button at the bottom */
+    margin-bottom: 10px;
+    /* Add space below the button */
+}
+
+.buy-now-btn:hover {
+    background-color: #ff7f50;
+    /* Lighter shade on hover */
+}
+
+/* Add media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .ring_section_main h1 {
+        font-size: 24px;
+        /* Decreased font size for smaller screens */
+        margin-bottom: 20px;
+        /* Decreased margin bottom for smaller screens */
+    }
+
+    .jewellery-box {
+        width: calc(50% - 20px);
+        /* Two columns on smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .ring_section_main h1 {
+        font-size: 20px;
+        /* Further decreased font size for smaller screens */
+        margin-bottom: 10px;
+        /* Further decreased margin bottom for smaller screens */
+    }
+
+    .jewellery-box {
+        width: calc(100% - 20px);
+        /* Single column on even smaller screens */
+    }
+}
+
+
+/* Ring Container Styles End*/

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earrings Section</title>
+    <link rel="stylesheet" href="earnings.css">
+
+</head>
+
+<body>
+
+    <div class="full-width-image">
+        <img src="./earring asset/earrings.jpg" alt="Full Width Image">
+    </div>
+
+
+    <div class="earring_section_main">
+        <h1>Earrings</h1>
+        <div class="earrings-container">
+            <!-- Repeat this block for each earring box -->
+            <div class="earring-box">
+                <img class="earring-img" src="./earring asset/andrew-hutchings-Asngw4A5_tM-unsplash.jpg"
+                    alt="Earring 1">
+                <div class="earring-info">
+                    <div class="earring-title">Elegant Rose Gold Earrings</div>
+                    <div class="earring-price">$49.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="earring-box">
+                <img class="earring-img" src="./earring asset/daihana-monares-3BEyMds-Oo0-unsplash.jpg" alt="Earring 1">
+                <div class="earring-info">
+                    <div class="earring-title">Elegant Rose Gold Earrings</div>
+                    <div class="earring-price">$49.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="earring-box">
+                <img class="earring-img" src="./earring asset/daihana-monares-oWFPDjxuyUM-unsplash.jpg" alt="Earring 1">
+                <div class="earring-info">
+                    <div class="earring-title">Elegant Rose Gold Earrings</div>
+                    <div class="earring-price">$49.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="earring-box">
+                <img class="earring-img" src="./earring asset/eleni-koureas-0Hv7W_p410w-unsplash.jpg" alt="Earring 1">
+                <div class="earring-info">
+                    <div class="earring-title">Elegant Rose Gold Earrings</div>
+                    <div class="earring-price">$49.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="earring-box">
+                <img class="earring-img" src="./earring asset/ha-ha-6RToWEdU9s4-unsplash.jpg" alt="Earring 1">
+                <div class="earring-info">
+                    <div class="earring-title">Elegant Rose Gold Earrings</div>
+                    <div class="earring-price">$49.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="earring-box">
+                <img class="earring-img" src="./earring asset/miao-xiang-leFR7Fj3J6I-unsplash.jpg" alt="Earring 1">
+                <div class="earring-info">
+                    <div class="earring-title">Elegant Rose Gold Earrings</div>
+                    <div class="earring-price">$49.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="earring-box">
+                <img class="earring-img" src="./earring asset/natalie-sysko-JaiWZrV3NwI-unsplash.jpg" alt="Earring 1">
+                <div class="earring-info">
+                    <div class="earring-title">Elegant Rose Gold Earrings</div>
+                    <div class="earring-price">$49.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="earring-box">
+                <img class="earring-img" src="./earring asset/nataliya-melnychuk-oO0JAOJhquk-unsplash.jpg"
+                    alt="Earring 1">
+                <div class="earring-info">
+                    <div class="earring-title">Elegant Rose Gold Earrings</div>
+                    <div class="earring-price">$49.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <!-- Repeat end -->
+        </div>
+
+
+        <div class="load-more-btn">
+            <button onclick="loadMoreEarrings()">Load More</button>
+        </div>
+    </div>
+
+    <script>
+        let earringsLoaded = 6; // Initial number of earrings loaded
+
+        function loadMoreEarrings() {
+            const earringsContainer = document.querySelector('.earrings-container');
+            const loadMoreBtn = document.querySelector('.load-more-btn-earring button');
+
+            // Array of image paths
+            const imagePaths = [
+                "./earring asset/simona-sergi-WNn5xbWfkLI-unsplash.jpg",
+                "./earring asset/sheldon-Vdl0I34YfA4-unsplash.jpg",
+                "./earring asset/sama-hosseini-6seIjO8gX2w-unsplash.jpg",
+                "./earring asset/sama-hosseini-DJD07KW_c_Q-unsplash.jpg",
+                // Add more image paths here
+            ];
+
+            for (let i = 0; i < 4; i++) {
+                // Create a new earring box
+                const earringBox = document.createElement('div');
+                earringBox.classList.add('earring-box');
+
+                // Create the earring image
+                const earringImg = document.createElement('img');
+                earringImg.classList.add('earring-img');
+
+                // Set the src attribute based on earringsLoaded
+                earringImg.src = imagePaths[earringsLoaded % imagePaths.length];
+                earringImg.alt = `Earring ${earringsLoaded + i}`;
+
+                // Create the earring info
+                const earringInfo = document.createElement('div');
+                earringInfo.classList.add('earring-info');
+
+                // Create the earring title
+                const earringTitle = document.createElement('div');
+                earringTitle.classList.add('earring-title');
+                earringTitle.textContent = `New Earring ${earringsLoaded + i}`;
+
+                // Create the earring price
+                const earringPrice = document.createElement('div');
+                earringPrice.classList.add('earring-price');
+                earringPrice.textContent = '$49.99'; // You can change the price here
+
+                // Create the Buy Now button
+                const buyNowBtn = document.createElement('button');
+                buyNowBtn.classList.add('buy-now-btn');
+                buyNowBtn.textContent = 'Buy Now';
+                buyNowBtn.onclick = buyNow;
+
+                // Append elements to the earring box
+                earringInfo.appendChild(earringTitle);
+                earringInfo.appendChild(earringPrice);
+                earringInfo.appendChild(buyNowBtn);
+                earringBox.appendChild(earringImg);
+                earringBox.appendChild(earringInfo);
+
+                // Append the new earring box to the container
+                earringsContainer.appendChild(earringBox);
+
+                earringsLoaded++; // Increment earringsLoaded inside the loop
+            }
+
+            // If there are no more earrings to load, hide the "Load More" button
+            if (earringsLoaded > 20) { // Adjust the number based on your earring collection
+                loadMoreBtn.style.display = 'none';
+            }
+        }
+
+        function buyNow(button) {
+            const earringBox = button.closest('.earring-box');
+            const earringTitle = earringBox.querySelector('.earring-title').textContent;
+            const earringPrice = earringBox.querySelector('.earring-price').textContent;
+
+            const message = `Check out this earring:\nTitle: ${earringTitle}\nPrice: ${earringPrice}`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappLink = `https://wa.me/?text=${encodedMessage}`;
+
+            window.open(whatsappLink, '_blank');
+        }
+
+
+    </script>
+
+</body>
+
+</html>

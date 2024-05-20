@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Coins Section</title>
+    <link rel="stylesheet" href="gold-coins.css">
+</head>
+
+<body>
+
+    <div class="full-width-image">
+        <img src="./asset/coins.jpg" alt="Full Width Image">
+    </div>
+
+    <div class="gold-coins-section-main">
+        <h1>Gold Coins</h1>
+        <div class="gold-coins-container">
+            <!-- Repeat this block for each gold coin box -->
+            <div class="gold-coin-box">
+                <img class="gold-coin-img" src="./asset/dash-cryptocurrency--3xhXkOcKvE-unsplash.jpg" alt="Gold Coin 1">
+                <div class="gold-coin-info">
+                    <div class="gold-coin-title">Pure Gold Coin</div>
+                    <div class="gold-coin-price">$999.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="gold-coin-box">
+                <img class="gold-coin-img" src="./asset/dmytro-demidko-z4VuRg-ZOEg-unsplash.jpg" alt="Gold Coin 2">
+                <div class="gold-coin-info">
+                    <div class="gold-coin-title">Limited Edition Gold Coin</div>
+                    <div class="gold-coin-price">$1499.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="gold-coin-box">
+                <img class="gold-coin-img" src="./asset/infrarate-com-xXq_6_Kwysc-unsplash.jpg" alt="Gold Coin 3">
+                <div class="gold-coin-info">
+                    <div class="gold-coin-title">Rare Gold Coin</div>
+                    <div class="gold-coin-price">$2999.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="gold-coin-box">
+                <img class="gold-coin-img" src="./asset/kanchanara-tAFCSgfS80E-unsplash.jpg" alt="Gold Coin 1">
+                <div class="gold-coin-info">
+                    <div class="gold-coin-title">Pure Gold Coin</div>
+                    <div class="gold-coin-price">$999.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="gold-coin-box">
+                <img class="gold-coin-img" src="./asset/scottsdale-mint-djp57RdDkWs-unsplash.jpg" alt="Gold Coin 2">
+                <div class="gold-coin-info">
+                    <div class="gold-coin-title">Limited Edition Gold Coin</div>
+                    <div class="gold-coin-price">$1499.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="gold-coin-box">
+                <img class="gold-coin-img" src="./asset/traxer-Czu07W8Tpv8-unsplash.jpg" alt="Gold Coin 3">
+                <div class="gold-coin-info">
+                    <div class="gold-coin-title">Rare Gold Coin</div>
+                    <div class="gold-coin-price">$2999.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="gold-coin-box">
+                <img class="gold-coin-img" src="./asset/zlataky-cz-Bn77cbbbqOQ-unsplash.jpg" alt="Gold Coin 1">
+                <div class="gold-coin-info">
+                    <div class="gold-coin-title">Pure Gold Coin</div>
+                    <div class="gold-coin-price">$999.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="gold-coin-box">
+                <img class="gold-coin-img" src="./asset/zlataky-cz-KmZbZuyBWkM-unsplash.jpg" alt="Gold Coin 2">
+                <div class="gold-coin-info">
+                    <div class="gold-coin-title">Limited Edition Gold Coin</div>
+                    <div class="gold-coin-price">$1499.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <!-- Repeat end -->
+        </div>
+
+        <div class="load-more-btn">
+            <button onclick="loadMoreGoldCoins()">Load More</button>
+        </div>
+    </div>
+
+    <script>
+        let goldCoinsLoaded = 1; // Initial number of gold coins loaded
+
+        function loadMoreGoldCoins() {
+            const goldCoinsContainer = document.querySelector('.gold-coins-container');
+            const loadMoreBtn = document.querySelector('.load-more-btn button');
+
+            // Array of image paths
+            const imagePaths = [
+                "./gold-coin-assets/gold-coin4.jpg",
+                "./gold-coin-assets/gold-coin5.jpg",
+                "./gold-coin-assets/gold-coin6.jpg",
+                // Add more image paths here
+            ];
+
+            for (let i = 0; i < 3; i++) {
+                // Create a new gold coin box
+                const goldCoinBox = document.createElement('div');
+                goldCoinBox.classList.add('gold-coin-box');
+
+                // Create the gold coin image
+                const goldCoinImg = document.createElement('img');
+                goldCoinImg.classList.add('gold-coin-img');
+
+                // Set the src attribute based on goldCoinsLoaded
+                goldCoinImg.src = imagePaths[goldCoinsLoaded % imagePaths.length];
+                goldCoinImg.alt = `Gold Coin ${goldCoinsLoaded + i}`;
+
+                // Create the gold coin info
+                const goldCoinInfo = document.createElement('div');
+                goldCoinInfo.classList.add('gold-coin-info');
+
+                // Create the gold coin title
+                const goldCoinTitle = document.createElement('div');
+                goldCoinTitle.classList.add('gold-coin-title');
+                goldCoinTitle.textContent = `New Gold Coin ${goldCoinsLoaded + i}`;
+
+                // Create the gold coin price
+                const goldCoinPrice = document.createElement('div');
+                goldCoinPrice.classList.add('gold-coin-price');
+                goldCoinPrice.textContent = '$999.99'; // You can change the price here
+
+                // Create the Buy Now button
+                const buyNowBtn = document.createElement('button');
+                buyNowBtn.classList.add('buy-now-btn');
+                buyNowBtn.textContent = 'Buy Now';
+                buyNowBtn.onclick = buyNow;
+
+                // Append elements to the gold coin box
+                goldCoinInfo.appendChild(goldCoinTitle);
+                goldCoinInfo.appendChild(goldCoinPrice);
+                goldCoinInfo.appendChild(buyNowBtn);
+                goldCoinBox.appendChild(goldCoinImg);
+                goldCoinBox.appendChild(goldCoinInfo);
+
+                // Append the new gold coin box to the container
+                goldCoinsContainer.appendChild(goldCoinBox);
+
+                goldCoinsLoaded++; // Increment goldCoinsLoaded inside the loop
+            }
+
+            // If there are no more gold coins to load, hide the "Load More" button
+            if (goldCoinsLoaded > 6) { // Adjust the number based on your gold coin collection
+                loadMoreBtn.style.display = 'none';
+            }
+        }
+
+        function buyNow(button) {
+            const goldCoinBox = button.closest('.gold-coin-box');
+            const goldCoinTitle = goldCoinBox.querySelector('.gold-coin-title').textContent;
+            const goldCoinPrice = goldCoinBox.querySelector('.gold-coin-price').textContent;
+
+            const message = `Check out this gold coin:\nTitle: ${goldCoinTitle}\nPrice: ${goldCoinPrice}`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappLink = `https://wa.me/?text=${encodedMessage}`;
+
+            window.open(whatsappLink, '_blank');
+        }
+    </script>
+
+</body>
+
+</html>

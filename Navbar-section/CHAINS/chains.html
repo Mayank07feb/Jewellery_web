@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chains Section</title>
+    <link rel="stylesheet" href="chains.css">
+</head>
+
+<body>
+
+    <div class="full-width-image">
+        <img src="./asset/chains.jpg" alt="Full Width Image">
+    </div>
+
+    <div class="chains-section-main">
+        <h1>Chains</h1>
+        <div class="chains-container">
+            <!-- Repeat this block for each chain box -->
+            <div class="chain-box">
+                <img class="chain-img" src="./asset/alberto-rodriguez-santana-EU-KuIDEbKU-unsplash.jpg" alt="Chain 1">
+                <div class="chain-info">
+                    <div class="chain-title">Stylish Gold Chain</div>
+                    <div class="chain-price">$199.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="chain-box">
+                <img class="chain-img" src="./asset/vishnu-prasad-Ct-7svw082I-unsplash.jpg" alt="Chain 2">
+                <div class="chain-info">
+                    <div class="chain-title">Elegant Silver Chain</div>
+                    <div class="chain-price">$99.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="chain-box">
+                <img class="chain-img" src="./asset/vinicius-tardivo-f8uvYh1ZhJw-unsplash.jpg" alt="Chain 1">
+                <div class="chain-info">
+                    <div class="chain-title">Stylish Gold Chain</div>
+                    <div class="chain-price">$199.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="chain-box">
+                <img class="chain-img" src="./asset/atul-mohan-TmOPo7TpLzw-unsplash.jpg" alt="Chain 2">
+                <div class="chain-info">
+                    <div class="chain-title">Elegant Silver Chain</div>
+                    <div class="chain-price">$99.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="chain-box">
+                <img class="chain-img" src="./asset/gabriella-s-hrgbIpIdLpE-unsplash.jpg" alt="Chain 1">
+                <div class="chain-info">
+                    <div class="chain-title">Stylish Gold Chain</div>
+                    <div class="chain-price">$199.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="chain-box">
+                <img class="chain-img" src="./asset/hosniye-sadeghi-_Ycmc96ZxWM-unsplash.jpg" alt="Chain 2">
+                <div class="chain-info">
+                    <div class="chain-title">Elegant Silver Chain</div>
+                    <div class="chain-price">$99.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="chain-box">
+                <img class="chain-img" src="./asset/mahbod-akhzami-GzkdcR2iMvw-unsplash.jpg" alt="Chain 1">
+                <div class="chain-info">
+                    <div class="chain-title">Stylish Gold Chain</div>
+                    <div class="chain-price">$199.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="chain-box">
+                <img class="chain-img" src="./asset/nataliya-melnychuk-x6ssf7YpHXA-unsplash.jpg" alt="Chain 2">
+                <div class="chain-info">
+                    <div class="chain-title">Elegant Silver Chain</div>
+                    <div class="chain-price">$99.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <!-- Repeat end -->
+        </div>
+
+        <div class="load-more-btn">
+            <button onclick="loadMoreChains()">Load More</button>
+        </div>
+    </div>
+
+    <script>
+        let chainsLoaded = 2; // Initial number of chains loaded
+
+        function loadMoreChains() {
+            const chainsContainer = document.querySelector('.chains-container');
+            const loadMoreBtn = document.querySelector('.load-more-btn button');
+
+            // Array of image paths
+            const imagePaths = [
+                "./chain-assets/chain3.jpg",
+                "./chain-assets/chain4.jpg",
+                "./chain-assets/chain5.jpg",
+                // Add more image paths here
+            ];
+
+            for (let i = 0; i < 3; i++) {
+                // Create a new chain box
+                const chainBox = document.createElement('div');
+                chainBox.classList.add('chain-box');
+
+                // Create the chain image
+                const chainImg = document.createElement('img');
+                chainImg.classList.add('chain-img');
+
+                // Set the src attribute based on chainsLoaded
+                chainImg.src = imagePaths[chainsLoaded % imagePaths.length];
+                chainImg.alt = `Chain ${chainsLoaded + i}`;
+
+                // Create the chain info
+                const chainInfo = document.createElement('div');
+                chainInfo.classList.add('chain-info');
+
+                // Create the chain title
+                const chainTitle = document.createElement('div');
+                chainTitle.classList.add('chain-title');
+                chainTitle.textContent = `New Chain ${chainsLoaded + i}`;
+
+                // Create the chain price
+                const chainPrice = document.createElement('div');
+                chainPrice.classList.add('chain-price');
+                chainPrice.textContent = '$199.99'; // You can change the price here
+
+                // Create the Buy Now button
+                const buyNowBtn = document.createElement('button');
+                buyNowBtn.classList.add('buy-now-btn');
+                buyNowBtn.textContent = 'Buy Now';
+                buyNowBtn.onclick = buyNow;
+
+                // Append elements to the chain box
+                chainInfo.appendChild(chainTitle);
+                chainInfo.appendChild(chainPrice);
+                chainInfo.appendChild(buyNowBtn);
+                chainBox.appendChild(chainImg);
+                chainBox.appendChild(chainInfo);
+
+                // Append the new chain box to the container
+                chainsContainer.appendChild(chainBox);
+
+                chainsLoaded++; // Increment chainsLoaded inside the loop
+            }
+
+            // If there are no more chains to load, hide the "Load More" button
+            if (chainsLoaded > 5) { // Adjust the number based on your chain collection
+                loadMoreBtn.style.display = 'none';
+            }
+        }
+
+        function buyNow(button) {
+            const chainBox = button.closest('.chain-box');
+            const chainTitle = chainBox.querySelector('.chain-title').textContent;
+            const chainPrice = chainBox.querySelector('.chain-price').textContent;
+
+            const message = `Check out this chain:\nTitle: ${chainTitle}\nPrice: ${chainPrice}`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappLink = `https://wa.me/?text=${encodedMessage}`;
+
+            window.open(whatsappLink, '_blank');
+        }
+    </script>
+
+</body>
+
+</html>

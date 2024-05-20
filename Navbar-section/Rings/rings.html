@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ring Section</title>
+    <link rel="stylesheet" href="rings.css">
+</head>
+
+<body>
+
+    <div class="full-width-image-ring">
+        <img src="./rings asset/rings.webp" alt="Full Width Image">
+    </div>
+
+    <div class="ring_section_main">
+        <h1>Rings</h1>
+        <div class="rings-container">
+            <!-- Repeat this block for each ring box -->
+            <div class="ring-box">
+                <img class="ring-img" src="./rings asset/agus-donat-Wn_hKtFYgCw-unsplash.jpg" alt="Ring 1">
+                <div class="ring-info">
+                    <div class="ring-title">Elegant Diamond Ring</div>
+                    <div class="ring-price">$499.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="ring-box">
+                <img class="ring-img" src="./rings asset/alexis-antoine-GBpKfFfJhgw-unsplash.jpg" alt="Ring 2">
+                <div class="ring-info">
+                    <div class="ring-title">Sapphire Engagement Ring</div>
+                    <div class="ring-price">$799.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="ring-box">
+                <img class="ring-img" src="./rings asset/cornelia-ng-hxtKsjWSd3M-unsplash.jpg" alt="Ring 1">
+                <div class="ring-info">
+                    <div class="ring-title">Elegant Diamond Ring</div>
+                    <div class="ring-price">$499.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="ring-box">
+                <img class="ring-img" src="./rings asset/denny-muller-AKbE5xlIZXA-unsplash.jpg" alt="Ring 2">
+                <div class="ring-info">
+                    <div class="ring-title">Sapphire Engagement Ring</div>
+                    <div class="ring-price">$799.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="ring-box">
+                <img class="ring-img" src="./rings asset/felipe-salgado-Z4BJfx59yqY-unsplash.jpg" alt="Ring 1">
+                <div class="ring-info">
+                    <div class="ring-title">Elegant Diamond Ring</div>
+                    <div class="ring-price">$499.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="ring-box">
+                <img class="ring-img" src="./rings asset/kuromi-lu-_OG-hxrBSUQ-unsplash.jpg" alt="Ring 2">
+                <div class="ring-info">
+                    <div class="ring-title">Sapphire Engagement Ring</div>
+                    <div class="ring-price">$799.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="ring-box">
+                <img class="ring-img" src="./rings asset/luigi-pozzoli-jZrfY30y6Kc-unsplash.jpg" alt="Ring 1">
+                <div class="ring-info">
+                    <div class="ring-title">Elegant Diamond Ring</div>
+                    <div class="ring-price">$499.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <div class="ring-box">
+                <img class="ring-img" src="./rings asset/mr-autthaporn-pradidpong-2MZwPQ2EMik-unsplash.jpg"
+                    alt="Ring 2">
+                <div class="ring-info">
+                    <div class="ring-title">Sapphire Engagement Ring</div>
+                    <div class="ring-price">$799.99</div>
+                    <button class="buy-now-btn" onclick="buyNow(this)">Buy Now</button>
+                </div>
+            </div>
+            <!-- Add more ring boxes here -->
+            <!-- Repeat end -->
+        </div>
+
+        <div class="load-more-btn-ring">
+            <button onclick="loadMoreRings()">Load More</button>
+        </div>
+    </div>
+
+    <script>
+
+        let ringsLoaded = 2; // Initial number of rings loaded
+
+        function loadMoreRings() {
+            const ringsContainer = document.querySelector('.rings-container');
+            const loadMoreBtn = document.querySelector('.load-more-btn-ring button');
+
+            // Array of image paths for additional rings
+            const ringImagePaths = [
+                "./rings asset/sabrianna-kuko1hX_kXw-unsplash.jpg",
+                "./rings asset/sabrianna-mmCm6c2ru5A-unsplash.jpg",
+                "./rings asset/sabrianna-yEJwDxAoHc0-unsplash.jpg",
+                "./rings asset/sama-hosseini-8dTc4JFeLm4-unsplash.jpg",
+                // Add more image paths for rings here
+            ];
+
+            for (let i = 0; i < 3; i++) { // Load 3 more rings each time
+                // Create a new ring box
+                const ringBox = document.createElement('div');
+                ringBox.classList.add('ring-box');
+
+                // Create the ring image
+                const ringImg = document.createElement('img');
+                ringImg.classList.add('ring-img');
+                ringImg.src = ringImagePaths[ringsLoaded % ringImagePaths.length];
+                ringImg.alt = `Ring ${ringsLoaded + i}`;
+
+                // Create the ring info
+                const ringInfo = document.createElement('div');
+                ringInfo.classList.add('ring-info');
+
+                // Create the ring title
+                const ringTitle = document.createElement('div');
+                ringTitle.classList.add('ring-title');
+                ringTitle.textContent = `New Ring ${ringsLoaded + i}`;
+
+                // Create the ring price
+                const ringPrice = document.createElement('div');
+                ringPrice.classList.add('ring-price');
+                ringPrice.textContent = '$399.99'; // You can change the price here
+
+                // Create the Buy Now button
+                const buyNowBtn = document.createElement('button');
+                buyNowBtn.classList.add('buy-now-btn');
+                buyNowBtn.textContent = 'Buy Now';
+                buyNowBtn.onclick = buyNow;
+
+                // Append elements to the ring info
+                ringInfo.appendChild(ringTitle);
+                ringInfo.appendChild(ringPrice);
+                ringInfo.appendChild(buyNowBtn);
+
+                // Append the new ring box to the container
+                ringBox.appendChild(ringImg);
+                ringBox.appendChild(ringInfo);
+                ringsContainer.appendChild(ringBox);
+
+                ringsLoaded++; // Increment ringsLoaded inside the loop
+            }
+
+            // If there are no more rings to load, hide the "Load More" button
+            if (ringsLoaded > 8) { // Adjust the number based on your ring collection
+                loadMoreBtn.style.display = 'none';
+            }
+        }
+
+        function buyNow(button) {
+            const ringBox = button.closest('.ring-box');
+            const ringTitle = ringBox.querySelector('.ring-title').textContent;
+            const ringPrice = ringBox.querySelector('.ring-price').textContent;
+
+            const message = `Check out this ring:\nTitle: ${ringTitle}\nPrice: ${ringPrice}`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappLink = `https://wa.me/?text=${encodedMessage}`;
+
+            window.open(whatsappLink, '_blank');
+        }
+
+    </script>
+
+</body>
+
+</html>

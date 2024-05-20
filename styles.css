@@ -1,0 +1,1505 @@
+/*Inquiry Form Start*/
+
+.inquiry-form-popup {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Popup styles */
+#popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black overlay */
+    z-index: 9999;
+}
+
+#popup-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Semi-transparent white background */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    display: none;
+    /* Initially hidden */
+    background-image: url('./assets/bg.jpg');
+    /* Background image for the popup container */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.popup-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    /* Dark color for the title */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn-primary {
+    background-color: #ffcc00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e6b800;
+}
+
+.btn-secondary {
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #bbb;
+}
+
+.jewellery-form {
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.jewellery-form h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+    /* Dark color for the form title */
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+    /* Dark color for labels */
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    height: 120px;
+}
+
+.responsemessage {
+    color: red;
+    /* Color for response/error messages */
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .jewellery-logo {
+        width: 120px;
+    }
+}
+
+
+/*Inquiry Form End*/
+
+
+
+
+
+
+/*Header Start*/
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f1e3;
+    /* Light golden background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo a {
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+    /* Black text color */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.logo a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin: 0 20px;
+    position: relative;
+}
+
+.search-bar input {
+    width: calc(100% - 40px);
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.search-bar input[type="text"] {
+    font-size: 12px;
+    /* Adjust the font size as needed */
+}
+
+.search-icon {
+    position: absolute;
+    right: 30px;
+    color: #000;
+    /* Black icon color */
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin-top: 8px;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #000;
+    /* Black text color */
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #e6b31e;
+    /* Light golden color on hover */
+}
+
+.nav-links li a:hover::before {
+    background-color: #e6b31e;
+    /* Light golden color for underline on hover */
+}
+
+/* Media Query for Responsive Design */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    .search-bar {
+        margin: 10px 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .search-bar input {
+        width: 100%;
+    }
+}
+
+/*Header End*/
+
+/* Main Navigation styles */
+
+/* Navbar styles */
+
+.jewellery-sec-main {
+    width: 100%;
+    background-color: #f5e6c2;
+    /* Light golden background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar-jewellery {
+    width: 100%;
+    margin-top: 0px;
+    padding: 15px 0;
+}
+
+.jewellery-sec {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.jewellery-sec li {
+    margin-right: 30px;
+}
+
+.jewellery-sec li:last-child {
+    margin-right: 0;
+}
+
+.jewellery-sec a {
+    text-decoration: none;
+    color: #000;
+    /* Black text color */
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 6px 6px;
+    border-radius: 20px;
+}
+
+.jewellery-sec a:hover {
+    color: #fff;
+    background-color: #e6b31e;
+}
+
+.jewellery-sec a.active {
+    color: #fff;
+    background-color: #b38b00;
+}
+
+/* Media Query for Responsive Design */
+@media screen and (max-width: 768px) {
+    .jewellery-sec-main {
+        display: none;
+    }
+
+    .jewellery-sec {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .jewellery-sec li {
+        margin: 10px 0;
+    }
+
+    .search-bar-jewellery {
+        padding: 10px 0;
+    }
+
+    .jewellery-sec a {
+        font-size: 12px;
+        /* Decrease font size for smaller screens */
+    }
+}
+
+
+/* Nav Styling End*/
+
+
+
+/*Category Jewelry Section Start */
+
+.jewelry-section {
+    text-align: center;
+    background: linear-gradient(to bottom, #f9e8e8, #eae3d5);
+    /* Very light rose gold gradient background */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.jewelry-section h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 48px;
+    margin: 30px 0 60px;
+    color: #b38b00;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.category-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.category-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.category-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.category-box:hover img {
+    transform: scale(1.1);
+}
+
+.category-box span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 12px;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.category-box:hover span {
+    opacity: 1;
+}
+
+/* Additional Styling */
+
+.category-box:nth-child(odd) {
+    background-color: #f8f8f8;
+}
+
+.category-box:nth-child(even) {
+    background-color: #fff;
+}
+
+/* Responsive Design */
+
+@media only screen and (max-width: 768px) {
+    .category-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .jewelry-section h2 {
+        font-size: 36px;
+        margin: 20px 0 40px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .category-container {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .jewelry-section h2 {
+        font-size: 24px;
+        margin: 10px 0 30px;
+    }
+}
+
+/*Category Jewelry Section End */
+
+
+/*Gif Section Start*/
+
+.gif-section {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: goldenrod;
+    /* Updated to golden */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Adds shadow for depth */
+    padding: 20px;
+    /* Adds space around the content */
+    text-align: center;
+    /* Centers text if present */
+}
+
+.gif-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    /* Matches the section's border-radius */
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Inner shadow for contrast */
+}
+
+.gif-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+    object-fit: cover;
+    /* Ensures the image covers the area without stretching */
+}
+
+.gif-container img:hover {
+    transform: scale(1.1);
+}
+
+/* Optional: Adding a caption below the image */
+.caption {
+    font-size: 14px;
+    color: white;
+    opacity: 0.7;
+    margin-top: 10px;
+}
+
+
+/*Gif Section End*/
+
+
+/* Product container start */
+.product-container-main h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-align: center;
+    color: goldenrod;
+    margin-top: 50px;
+}
+
+.product-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+/* Box styling */
+.box {
+    position: relative;
+    width: 250px;
+    height: 300px;
+    background-color: #f5e6c2;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+/* Image styling */
+.box img {
+    width: 100%;
+    height: auto;
+}
+
+/* Title styling */
+.box h3 {
+    margin: 5px 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Price styling */
+.box p {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Overlay on hover */
+.box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.box:hover::before {
+    opacity: 0.8;
+}
+
+/* View details text styling */
+.box::after {
+    content: 'View Details';
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease, bottom 0.3s ease;
+}
+
+.box:hover::after {
+    opacity: 1;
+    bottom: 0;
+}
+
+/* Box hover effect */
+.box:hover {
+    transform: scale(1.05);
+}
+
+/* Wishlist icon styling */
+
+.wishlist-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    color: goldenrod;
+    /* Default color of the heart icon */
+    transition: color 0.3s ease;
+    /* Smooth color transition */
+}
+
+/* Hover effect for Wishlist icon */
+.wishlist-icon:hover {
+    color: black;
+    /* Color change to black on hover */
+}
+
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .product-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .box {
+        width: calc(50% - 20px);
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .box {
+        width: calc(100% - 20px);
+    }
+}
+
+/* Product container end */
+
+
+/* Testimonial Section Start */
+
+.testimonial-section-main {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffe7b3;
+    /* Light gold background color */
+}
+
+.testimonial-section-main h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #b38b00;
+    /* Gold color for heading */
+    text-align: center;
+    padding-top: 30px;
+    font-weight: bold;
+}
+
+.testimonial-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.testimonial-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.testimonial-card {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    margin: 0 15px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    /* Added box-shadow transition */
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    /* Move card up on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    /* Improved shadow on hover */
+}
+
+.testimonial-content {
+    margin-bottom: 20px;
+}
+
+.testimonial-content p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.author-info {
+    margin-top: 15px;
+}
+
+.author-info h3 {
+    margin: 5px 0 0;
+    font-size: 18px;
+    color: #222;
+}
+
+.author-info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.rating {
+    margin-top: 10px;
+}
+
+.stars {
+    font-size: 24px;
+    color: #f0c040;
+    /* Gold color for stars */
+}
+
+/* Slick Slider Dots Customization */
+.slick-dots {
+    bottom: -20px;
+}
+
+.slick-dots li button:before {
+    font-size: 12px;
+    color: #f0c040;
+    /* Gold color for dots */
+}
+
+/* Arrow Styles */
+.slick-prev,
+.slick-next {
+    font-size: 30px;
+    color: #333;
+    /* Dark color for arrows */
+    z-index: 1;
+}
+
+.slick-prev {
+    left: 10px;
+}
+
+.slick-next {
+    right: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .testimonial-card {
+        width: 80%;
+        /* Adjusted width for smaller screens */
+        margin: 0 auto 15px;
+    }
+}
+
+/* Testimonial Section End */
+
+/* About Us Container Start */
+
+/* Base styles */
+.about-us-content-container-main {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+    /* Use Roboto font */
+}
+
+.about-us-container {
+    width: 70%;
+}
+
+.about-us-content {
+    text-align: left;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f8e0e0;
+    /* Rose Gold */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-us-content h2 {
+    color: #d4af37;
+    /* Golden */
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.about-us-content p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.about-us-content .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #d4af37;
+    /* Golden */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-us-content .btn:hover {
+    background-color: #b8860b;
+    /* Dark Golden */
+}
+
+.about-us-image-container {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-us-image-container img {
+    max-width: 100%;
+    height: 300px;
+    /* Set the desired height here */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    .about-us-content-container-main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-us-container,
+    .about-us-image-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .about-us-content {
+        padding: 15px;
+    }
+
+    .about-us-content h2 {
+        font-size: 30px;
+    }
+
+    .about-us-content .btn {
+        padding: 10px 20px;
+    }
+}
+
+
+
+/* About Us Container End */
+
+
+
+
+/* Policy Container Start */
+
+.policy-container {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 0;
+    /* Removed bottom margin */
+    overflow-x: auto;
+    /* Allow horizontal scrolling if needed */
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    /* Prevent container from exceeding screen width */
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    /* Smooth transitions for box-shadow and background color on hover */
+}
+
+.icon-container:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Increase box-shadow on hover */
+    background-color: #f8f8f8;
+    /* Change background color on hover */
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 15px;
+    transition: transform 0.3s ease;
+    /* Smooth transition for icon scaling on hover */
+}
+
+.icon:hover {
+    transform: translateY(-5px);
+    /* Move icon slightly upwards on hover */
+}
+
+.material-icons {
+    font-size: 30px;
+    color: #333;
+    transition: color 0.3s ease;
+    /* Smooth transition for icon color change on hover */
+}
+
+.icon:hover .material-icons {
+    color: #e6b31e;
+    /* Change icon color on hover */
+}
+
+.label {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+    color: #555;
+    transition: color 0.3s ease;
+    /* Smooth transition for text color change on hover */
+}
+
+.icon:hover .label {
+    color: #e6b31e;
+    /* Change text color on hover */
+}
+
+/* Responsive Styling */
+@media only screen and (max-width: 768px) {
+    .icon {
+        margin: 0 10px;
+    }
+}
+
+/* Policy Container End */
+
+
+/* Contact Us Start */
+
+.contact-us-container-main {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contact-us-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-image: url('./assets/bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.contact-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    align-items: start;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-container,
+.contact-info-container {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    transition: transform 0.3s ease-in-out;
+}
+
+.contact-form-container:hover,
+.contact-info-container:hover {
+    transform: translateY(-5px) rotateX(2deg);
+}
+
+.contact-form h2,
+.contact-info-container h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #666;
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: calc(100% - 24px);
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: #007bff;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button[type="submit"] {
+    padding: 12px 24px;
+    background-color: #ffd700;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: #cca300;
+    transform: scale(1.05);
+}
+
+.contact-info-container {
+    height: 700px;
+}
+
+.contact-info-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info-container ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.contact-info-container ul li strong {
+    font-weight: bold;
+}
+
+.map-container {
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-container,
+    .contact-info-container {
+        margin-bottom: 20px;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        width: 100%;
+    }
+}
+
+/* Contact Us End *
+
+
+
+/* Footer Start */
+footer {
+    background-color: #e7bcb3;
+    /* Rose gold color */
+    margin-top: 20px;
+    color: #333;
+    /* Dark gray text color */
+    padding: 40px 20px;
+    /* Adjusted padding for smaller screens */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    /* Font family for the footer */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 0 0 calc(23% - 20px);
+    /* Adjusted width with margin */
+    margin-bottom: 20px;
+    text-align: left;
+    /* Left-align text within sections */
+}
+
+.footer-section h3 {
+    font-size: 24px;
+    /* Increased font size for headings */
+    margin-bottom: 15px;
+    /* Increased margin bottom for headings */
+    color: #83272d;
+    /* Updated color for h3 */
+    text-transform: uppercase;
+    /* Uppercase text for headings */
+    letter-spacing: 1px;
+    /* Increased letter spacing for headings */
+}
+
+.footer-section p,
+.footer-section ul li a {
+    font-size: 16px;
+    /* Increased font size for text */
+    line-height: 1.6;
+    /* Increased line height for better readability */
+    color: #555;
+    /* Medium gray text color */
+    text-decoration: none;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.useful-links li a,
+.information-links li a,
+.contact-links li a {
+    color: #83272d;
+    /* Updated color for links */
+    transition: color 0.3s ease;
+    /* Smooth transition for link hover effect */
+}
+
+.useful-links li a:hover,
+.information-links li a:hover,
+.contact-links li a:hover {
+    color: #6e1b20;
+    /* Darker color on hover for links */
+}
+
+.subscribe-form {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    /* Add some top margin for the subscribe form */
+}
+
+.subscribe-form input[type="email"] {
+    width: 70%;
+    padding: 12px;
+    margin-right: 10px;
+    border-radius: 20px;
+    /* Rounded corners for the input */
+    border: 2px solid #83272d;
+    /* Custom border color */
+}
+
+.subscribe-form button {
+    background-color: #83272d;
+    /* Custom background color */
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    /* Increased padding for button */
+    cursor: pointer;
+    border-radius: 20px;
+    /* Rounded corners for the button */
+    transition: background-color 0.3s ease;
+    /* Smooth transition for hover effect */
+}
+
+.subscribe-form button:hover {
+    background-color: #6e1b20;
+    /* Darker color on hover for button */
+}
+
+.footer-bottom {
+    background-color: #222;
+    padding: 15px 0;
+    /* Adjusted padding */
+    text-align: center;
+    font-size: 18px;
+    /* Increased font size for copyright text */
+    color: #ccc;
+    /* Light gray text color */
+}
+
+.follow-us {
+    margin-left: 10px;
+    margin-top: 20px;
+    /* Add margin to separate "Follow Us" section */
+}
+
+.follow-us h2 {
+    color: #83272d;
+    font-size: 24px;
+    /* Increased font size for "Follow Us" heading */
+    margin-bottom: 10px;
+    /* Increased margin bottom for "Follow Us" heading */
+}
+
+.follow-us ul {
+    list-style-type: none;
+    /* Remove default list styles */
+    padding: 0;
+    /* Remove padding */
+    margin: 0;
+    /* Remove margin */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: left;
+}
+
+.social-icons li {
+    margin-right: 20px;
+}
+
+.social-icons li a {
+    color: #83272d;
+    /* Color for social icons */
+    font-size: 28px;
+    /* Increased size for social icons */
+    transition: color 0.3s ease;
+    /* Smooth transition for hover effect */
+}
+
+.social-icons li a:hover {
+    color: #6e1b20;
+    /* Darker color on hover for social icons */
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-section {
+        flex: 0 0 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .subscribe-form input[type="email"] {
+        width: 100%;
+        /* Full width input on smaller screens */
+    }
+
+    .social-icons {
+        justify-content: center;
+        /* Center-align social icons */
+    }
+
+    .social-icons li {
+        margin-right: 10px;
+        /* Adjust margin between social icons */
+    }
+}
+
+
+/* Support Chat Button Start*/
+
+.support-button {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background: linear-gradient(20deg, #E6B8A2, #C39E94);
+    /* Rose gold gradient */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    /* Add box shadow for depth */
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    display: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Smooth background color transition on hover */
+}
+
+.support-button:hover {
+    background: linear-gradient(20deg, #C39E94, #E6B8A2);
+    /* Inverted gradient on hover */
+}
+
+.support-button h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: calc(100% - 24px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+    font-size: 16px;
+    color: #333;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #ffc107;
+}
+
+.form-group p {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+
+/* Circular button */
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(20deg, #E6B8A2, #C39E94);
+    /* Rose gold gradient */
+    color: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    line-height: 60px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    /* Smooth transition for all properties */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* Add shadow for depth */
+}
+
+.chat-button:hover {
+    background: linear-gradient(20deg, #C39E94, #E6B8A2);
+    /* Inverted gradient on hover */
+    transform: scale(1.1);
+    /* Slightly scale up on hover */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    /* Larger shadow on hover */
+}
+
+
+
+/* Google Icons styling */
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    color: #fff;
+    /* Icon color */
+    background-color: #C39E94;
+    /* Background color */
+    border-radius: 50%;
+    /* Circular shape */
+    padding: 10px;
+    /* Padding around the icon */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Smooth background color transition on hover */
+}
+
+.material-icons:hover {
+    background-color: #E6B8A2;
+    /* Darker shade on hover */
+}
+
+
+.colorful-button {
+    background-color: #f88767;
+    /* Lighter shade of rose gold */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+}
+
+.colorful-button:hover {
+    background-color: #1f130d;
+    /* Darker shade of rose gold on hover */
+}
+
+
+/* Support Chat Button End*/
